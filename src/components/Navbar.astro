@@ -2,7 +2,7 @@
 // src/components/Navbar.astro
 ---
 
-<header id="site-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b border-white/20 bg-black/15 backdrop-blur-[2px]">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b border-white/20 bg-black/15 backdrop-blur-[2px] animate-fade-in-down">
   <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-14 h-20 flex items-center justify-between">
     <!-- Brand Logo -->
     <a href="/" class="font-serif text-3xl sm:text-[34px] font-normal tracking-normal text-white hover:opacity-90 transition-opacity lowercase">
@@ -12,24 +12,24 @@
     <!-- Desktop Navigation Menu -->
     <nav class="hidden md:flex items-center space-x-9 text-[13.5px] font-normal text-white">
       <div class="relative group">
-        <button type="button" class="flex items-center gap-1.5 hover:text-white/80 transition-colors cursor-pointer">
+        <button type="button" class="flex items-center gap-1.5 hover:text-white/80 transition-colors duration-200 cursor-pointer">
           <span>What We Do</span>
-          <svg class="w-3 h-3 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-3 h-3 text-white/80 group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
       </div>
-      <a href="#about" class="hover:text-white/80 transition-colors">About</a>
-      <a href="#people" class="hover:text-white/80 transition-colors">People</a>
-      <a href="#case-studies" class="hover:text-white/80 transition-colors">Case Studies</a>
-      <a href="#insights" class="hover:text-white/80 transition-colors">Insights</a>
+      <a href="#about" class="hover:text-white transition-colors duration-200">About</a>
+      <a href="#people" class="hover:text-white transition-colors duration-200">People</a>
+      <a href="#case-studies" class="hover:text-white transition-colors duration-200">Case Studies</a>
+      <a href="#insights" class="hover:text-white transition-colors duration-200">Insights</a>
     </nav>
 
-    <!-- Desktop Contact Button -->
+    <!-- Desktop Contact Button with Micro-Interaction -->
     <div class="hidden md:flex">
       <a
         href="#contact"
-        class="inline-block bg-white text-black hover:bg-neutral-100 text-xs font-normal py-2.5 px-6 rounded-none transition-all duration-200"
+        class="inline-block bg-white text-black hover:bg-neutral-100 text-xs font-normal py-2.5 px-6 rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-[0.98]"
       >
         Contact
       </a>
@@ -39,7 +39,7 @@
     <button
       id="mobile-menu-btn"
       type="button"
-      class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none"
+      class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none transition-transform duration-200 active:scale-95"
       aria-label="Open Navigation Menu"
     >
       <span class="w-6 h-[1.5px] bg-white transition-transform duration-300 origin-center"></span>
@@ -64,7 +64,7 @@
     <button
       id="mobile-menu-close-btn"
       type="button"
-      class="w-10 h-10 flex items-center justify-center text-white/80 hover:text-white focus:outline-none"
+      class="w-10 h-10 flex items-center justify-center text-white/80 hover:text-white focus:outline-none transition-transform duration-200 active:scale-95"
       aria-label="Close Navigation Menu"
     >
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,23 +75,23 @@
 
   <!-- Center Links -->
   <nav class="flex flex-col space-y-6 my-auto py-8 text-xl font-serif text-neutral-200">
-    <a href="#practices" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10 flex items-center justify-between">
+    <a href="#practices" class="mobile-nav-link hover:text-white transition-colors duration-200 py-2 border-b border-white/10 flex items-center justify-between">
       <span>What We Do</span>
       <span class="text-sm font-sans text-neutral-500">&#8599;</span>
     </a>
-    <a href="#about" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10 flex items-center justify-between">
+    <a href="#about" class="mobile-nav-link hover:text-white transition-colors duration-200 py-2 border-b border-white/10 flex items-center justify-between">
       <span>About</span>
       <span class="text-sm font-sans text-neutral-500">&#8599;</span>
     </a>
-    <a href="#people" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10 flex items-center justify-between">
+    <a href="#people" class="mobile-nav-link hover:text-white transition-colors duration-200 py-2 border-b border-white/10 flex items-center justify-between">
       <span>People</span>
       <span class="text-sm font-sans text-neutral-500">&#8599;</span>
     </a>
-    <a href="#case-studies" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10 flex items-center justify-between">
+    <a href="#case-studies" class="mobile-nav-link hover:text-white transition-colors duration-200 py-2 border-b border-white/10 flex items-center justify-between">
       <span>Case Studies</span>
       <span class="text-sm font-sans text-neutral-500">&#8599;</span>
     </a>
-    <a href="#insights" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10 flex items-center justify-between">
+    <a href="#insights" class="mobile-nav-link hover:text-white transition-colors duration-200 py-2 border-b border-white/10 flex items-center justify-between">
       <span>Insights</span>
       <span class="text-sm font-sans text-neutral-500">&#8599;</span>
     </a>
@@ -101,7 +101,7 @@
   <div class="pt-4 border-t border-white/10">
     <a
       href="#contact"
-      class="mobile-nav-link block text-center bg-white text-black text-xs font-normal py-3.5 px-6 w-full rounded-none tracking-wide hover:bg-neutral-100 transition-colors"
+      class="mobile-nav-link block text-center bg-white text-black text-xs font-normal py-3.5 px-6 w-full rounded-none tracking-wide hover:bg-neutral-100 transition-all duration-300 ease-out hover:scale-[1.01] active:scale-[0.99]"
     >
       Contact
     </a>

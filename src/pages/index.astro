@@ -70,5 +70,40 @@ import Footer from '../components/Footer.astro';
 
     <!-- Footer -->
     <Footer />
+
+    <!-- Lightweight Native Intersection Observer for Scroll Reveals -->
+    <script>
+      function setupScrollReveals() {
+        const targets = document.querySelectorAll(
+          '.reveal-on-scroll, .reveal-slide-left, .reveal-slide-right'
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Unobserve once animated so it doesn't re-trigger unnecessarily
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.12, // Triggers when 12% of the element is visible
+            rootMargin: '0px 0px -50px 0px', // Starts animation slightly before entering view
+          }
+        );
+
+        targets.forEach((target) => observer.observe(target));
+      }
+
+      // Ensure execution whether document is still loading or already ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupScrollReveals);
+      } else {
+        setupScrollReveals();
+      }
+      document.addEventListener('astro:page-load', setupScrollReveals);
+    </script>
   </body>
 </html>

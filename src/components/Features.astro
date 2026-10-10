@@ -7,24 +7,28 @@ const practiceCards = [
     image: '/images/Image.webp',
     alt: 'Modern concrete architectural forms representing Capital practice',
     link: '#capital',
+    delayStyle: 'transition-delay: 0ms;',
   },
   {
     title: 'Private Wealth',
     image: '/images/Image-1.webp',
     alt: 'Advisor walking descending classical stone stairs representing Private Wealth',
     link: '#private-wealth',
+    delayStyle: 'transition-delay: 100ms;',
   },
   {
     title: 'M&A',
     image: '/images/Image-2.webp',
     alt: 'Architectural steel and glass tower representing M&A transactions',
     link: '#ma',
+    delayStyle: 'transition-delay: 200ms;',
   },
   {
     title: 'Disputes',
     image: '/images/Image-3.webp',
     alt: 'Classical Corinthian column capital representing dispute resolution',
     link: '#disputes',
+    delayStyle: 'transition-delay: 300ms;',
   },
 ];
 ---
@@ -32,7 +36,7 @@ const practiceCards = [
 <section id="practices" class="bg-white py-28 sm:py-36 text-[#111111]">
   <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-14">
     <!-- Header Row -->
-    <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-16 sm:mb-20">
+    <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-16 sm:mb-20 reveal-on-scroll">
       <!-- Left: Title -->
       <div>
         <h2 class="font-serif text-4xl sm:text-5xl lg:text-[3.25rem] font-normal text-[#111111] tracking-tight">
@@ -49,21 +53,22 @@ const practiceCards = [
         <div>
           <a
             href="#case-studies"
-            class="inline-flex items-center gap-3 bg-black text-white text-xs font-normal px-5 py-3 rounded-none hover:bg-neutral-800 transition-colors"
+            class="inline-flex items-center gap-3 bg-black text-white text-xs font-normal px-5 py-3 rounded-none hover:bg-neutral-800 transition-all duration-300 ease-out hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>Learn More</span>
-            <span class="text-sm">↗</span>
+            <span class="text-sm">&#8599;</span>
           </a>
         </div>
       </div>
     </div>
 
-    <!-- 4 Cards Grid -->
+    <!-- 4 Cards Grid with Staggered Scroll-Triggered Reveal -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
       {practiceCards.map((card) => (
         <a
           href={card.link}
-          class="relative group aspect-[3/4.2] overflow-hidden bg-neutral-900 block"
+          class="relative group aspect-[3/4.2] overflow-hidden bg-neutral-900 block transition-transform duration-300 ease-out hover:-translate-y-1 shadow-sm hover:shadow-xl reveal-on-scroll"
+          style={card.delayStyle}
         >
           <!-- Card Image -->
           <img
@@ -82,7 +87,7 @@ const practiceCards = [
               {card.title}
             </span>
             <span class="text-base font-light text-white/90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
-              ↗
+              &#8599;
             </span>
           </div>
         </a>
