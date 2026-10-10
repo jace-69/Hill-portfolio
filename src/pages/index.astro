@@ -1,0 +1,74 @@
+﻿---
+// src/pages/index.astro
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import FirmIntro from '../components/FirmIntro.astro';
+import Features from '../components/Features.astro';
+import SocialProof from '../components/SocialProof.astro';
+import ReputationFeature from '../components/ReputationFeature.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>Hill | Counsel Without Compromise</title>
+    <meta
+      name="description"
+      content="hill is a pre-eminent law firm serving a global client base in Capital, Private Wealth, M&A and Disputes. We advise them on their most significant transactions, their most sensitive disputes, and the long-term structuring of their affairs."
+    />
+    <meta name="keywords" content="Hill, law firm, Counsel Without Compromise, Capital, Private Wealth, M&A, Disputes" />
+
+    <!-- OpenGraph & Social Sharing -->
+    <meta property="og:title" content="Hill | Counsel Without Compromise" />
+    <meta property="og:description" content="hill is a pre-eminent law firm serving a global client base in Capital, Private Wealth, M&A and Disputes." />
+    <meta property="og:image" content="/images/Portrait.webp" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Cormorant Garamond & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-[#f7f6f3] text-[#111111] font-sans antialiased selection:bg-[#111111] selection:text-white">
+    <!-- Fixed Navigation Bar -->
+    <Navbar />
+
+    <!-- Main Content Flow -->
+    <main>
+      <!-- Hero Section -->
+      <Hero />
+
+      <!-- Lead Editorial Statement -->
+      <FirmIntro />
+
+      <!-- What We Do / 4 Practice Cards -->
+      <Features />
+
+      <!-- By The Numbers Section -->
+      <SocialProof />
+
+      <!-- When Reputation is on the Line -->
+      <ReputationFeature />
+
+      <!-- Pre-footer CTA  -->
+      <CTASection />
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,92 @@
+﻿---
+// src/components/Features.astro
+
+const practiceCards = [
+  {
+    title: 'Capital',
+    image: '/images/Image.webp',
+    alt: 'Modern concrete architectural forms representing Capital practice',
+    link: '#capital',
+  },
+  {
+    title: 'Private Wealth',
+    image: '/images/Image-1.webp',
+    alt: 'Advisor walking descending classical stone stairs representing Private Wealth',
+    link: '#private-wealth',
+  },
+  {
+    title: 'M&A',
+    image: '/images/Image-2.webp',
+    alt: 'Architectural steel and glass tower representing M&A transactions',
+    link: '#ma',
+  },
+  {
+    title: 'Disputes',
+    image: '/images/Image-3.webp',
+    alt: 'Classical Corinthian column capital representing dispute resolution',
+    link: '#disputes',
+  },
+];
+---
+
+<section id="practices" class="bg-white py-28 sm:py-36 text-[#111111]">
+  <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-14">
+    <!-- Header Row -->
+    <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-16 sm:mb-20">
+      <!-- Left: Title -->
+      <div>
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-[3.25rem] font-normal text-[#111111] tracking-tight">
+          What We Do
+        </h2>
+      </div>
+
+      <!-- Right: Description + Button -->
+      <div class="max-w-lg space-y-6">
+        <p class="text-xs sm:text-[13.5px] text-[#444444] font-light leading-relaxed">
+          Four core disciplines, each supported by specialist teams across finance, tax, employment and regulatory work — built to give clients the right combination of expertise for whatever the matter demands, however complex.
+        </p>
+
+        <div>
+          <a
+            href="#case-studies"
+            class="inline-flex items-center gap-3 bg-black text-white text-xs font-normal px-5 py-3 rounded-none hover:bg-neutral-800 transition-colors"
+          >
+            <span>Learn More</span>
+            <span class="text-sm">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+      {practiceCards.map((card) => (
+        <a
+          href={card.link}
+          class="relative group aspect-[3/4.2] overflow-hidden bg-neutral-900 block"
+        >
+          <!-- Card Image -->
+          <img
+            src={card.image}
+            alt={card.alt}
+            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+            loading="lazy"
+          />
+
+          <!-- Gradient overlay for title legibility -->
+          <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/20"></div>
+
+          <!-- Card Top Bar: Title & Diagonal Arrow -->
+          <div class="absolute top-0 left-0 right-0 p-6 flex items-start justify-between text-white z-10">
+            <span class="font-serif text-2xl sm:text-[1.75rem] font-normal text-white">
+              {card.title}
+            </span>
+            <span class="text-base font-light text-white/90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
+              ↗
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

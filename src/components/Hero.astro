@@ -1,0 +1,46 @@
+﻿---
+// src/components/Hero.astro
+---
+
+<section class="relative w-full h-[860px] max-h-screen min-h-[700px] flex flex-col justify-between overflow-hidden bg-[#181917] text-white">
+  <!-- Hero Background Image & Gradient Scrims -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/images/Portrait.webp"
+      alt="Hill executive counsel at desk in corner office"
+      class="w-full h-full object-cover object-center"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <!-- Exact lighting scrim matching original design -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+  </div>
+
+  <!-- Top spacer for fixed navbar -->
+  <div class="h-20"></div>
+
+  <!-- Hero Main Content (Left Headline) -->
+  <div class="relative z-10 max-w-[1280px] mx-auto w-full px-6 sm:px-10 lg:px-14 my-auto pt-6 pb-12">
+    <div class="max-w-3xl">
+      <h1 class="font-serif text-5xl sm:text-7xl lg:text-[5.5rem] font-normal leading-[1.04] tracking-[-0.015em] text-white">
+        Counsel<br />Without Compromise
+      </h1>
+    </div>
+  </div>
+
+  <!-- Hero Bottom Bar: Sub-headline and Arrow Button -->
+  <div class="relative z-10 max-w-[1280px] mx-auto w-full px-6 sm:px-10 lg:px-14 pb-16 flex items-center gap-6">
+    <p class="text-xs sm:text-[13px] text-white/85 font-light leading-relaxed max-w-[280px]">
+      A pre-eminent global law firm with truly international coverage.
+    </p>
+
+    <a
+      href="#about"
+      class="w-11 h-11 border border-white/30 flex items-center justify-center text-white hover:border-white hover:bg-white/10 transition-colors rounded-none shrink-0"
+      aria-label="Discover our firm"
+    >
+      <span class="text-base font-light">→</span>
+    </a>
+  </div>
+</section>

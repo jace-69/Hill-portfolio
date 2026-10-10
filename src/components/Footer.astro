@@ -1,0 +1,96 @@
+﻿---
+// src/components/Footer.astro
+
+const firmLinks = [
+  { name: 'About', href: '#about' },
+  { name: 'People', href: '#people' },
+  { name: 'Careers', href: '#careers' },
+  { name: 'Insights', href: '#insights' },
+];
+
+const connectLinks = [
+  { name: 'Contact Us', href: '#contact' },
+  { name: 'LinkedIn', href: 'https://linkedin.com' },
+  { name: 'YouTube', href: 'https://youtube.com' },
+  { name: 'X', href: 'https://x.com' },
+];
+
+const legalLinks = [
+  { name: 'Privacy', href: '#privacy' },
+  { name: 'Terms', href: '#terms' },
+];
+---
+
+<footer class="bg-[#0b0b0b] text-white pt-16 pb-12 sm:pb-16 overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-14">
+    <!-- Navigation Columns -->
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-10 lg:gap-16 pb-24 sm:pb-32">
+      <!-- Left offset -->
+      <div class="hidden md:block md:col-span-4 lg:col-span-5"></div>
+
+      <!-- OUR FIRM Column -->
+      <div class="col-span-1 md:col-span-3 lg:col-span-2 space-y-4">
+        <h3 class="text-[11px] uppercase tracking-[0.2em] text-white/50 font-medium">OUR FIRM</h3>
+        <ul class="space-y-3 text-xs sm:text-[13px] text-white/80 font-light">
+          {firmLinks.map((item) => (
+            <li>
+              <a href={item.href} class="hover:text-white transition-colors duration-200">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- CONNECT Column -->
+      <div class="col-span-1 md:col-span-3 lg:col-span-3 space-y-4">
+        <h3 class="text-[11px] uppercase tracking-[0.2em] text-white/50 font-medium">CONNECT</h3>
+        <ul class="space-y-3 text-xs sm:text-[13px] text-white/80 font-light">
+          {connectLinks.map((item) => (
+            <li>
+              <a href={item.href} target="_blank" rel="noopener" class="hover:text-white transition-colors duration-200">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- LEGAL Column -->
+      <div class="col-span-2 md:col-span-2 lg:col-span-2 space-y-4">
+        <h3 class="text-[11px] uppercase tracking-[0.2em] text-white/50 font-medium">LEGAL</h3>
+        <ul class="space-y-3 text-xs sm:text-[13px] text-white/80 font-light">
+          {legalLinks.map((item) => (
+            <li>
+              <a href={item.href} class="hover:text-white transition-colors duration-200">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Massive Logo & Contact Details Row -->
+    <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 pt-8">
+      <!-- Huge 'hill' Wordmark -->
+      <div class="-ml-1 sm:-ml-2">
+        <span class="font-serif text-8xl sm:text-9xl lg:text-[10.5rem] font-normal leading-[0.75] tracking-tight text-white block select-none lowercase">
+          hill
+        </span>
+      </div>
+
+      <!-- Contact & Legal Note -->
+      <div class="flex flex-col sm:flex-row gap-8 sm:gap-14 text-xs text-white/50 font-light pb-2">
+        <div class="space-y-1">
+          <p>+44 (0)20 7946 0800</p>
+          <p><a href="mailto:hello@hill.law" class="hover:text-white/80 transition-colors">hello@hill.law</a></p>
+        </div>
+        <div class="space-y-1">
+          <p>© Hill 2026</p>
+          <p>Authorised and regulated</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
