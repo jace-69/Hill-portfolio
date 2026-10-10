@@ -2,10 +2,10 @@
 // src/components/Navbar.astro
 ---
 
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/20 bg-black/15 backdrop-blur-[2px]">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b border-white/20 bg-black/15 backdrop-blur-[2px]">
   <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-14 h-20 flex items-center justify-between">
     <!-- Brand Logo -->
-    <a href="#" class="font-serif text-3xl sm:text-[34px] font-normal tracking-normal text-white hover:opacity-90 transition-opacity lowercase">
+    <a href="/" class="font-serif text-3xl sm:text-[34px] font-normal tracking-normal text-white hover:opacity-90 transition-opacity lowercase">
       hill
     </a>
 
@@ -35,73 +35,104 @@
       </a>
     </div>
 
-    <!-- Mobile Hamburger Toggle -->
+    <!-- Mobile Hamburger Toggle Button -->
     <button
       id="mobile-menu-btn"
       type="button"
-      class="md:hidden flex flex-col justify-center items-center w-9 h-9 space-y-1.5 focus:outline-none"
-      aria-label="Toggle Navigation Menu"
+      class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none"
+      aria-label="Open Navigation Menu"
     >
-      <span class="w-6 h-[1.5px] bg-white transition-transform duration-300 origin-center" id="bar-1"></span>
-      <span class="w-6 h-[1.5px] bg-white transition-opacity duration-300" id="bar-2"></span>
-      <span class="w-6 h-[1.5px] bg-white transition-transform duration-300 origin-center" id="bar-3"></span>
+      <span class="w-6 h-[1.5px] bg-white transition-transform duration-300 origin-center"></span>
+      <span class="w-6 h-[1.5px] bg-white transition-opacity duration-300"></span>
+      <span class="w-6 h-[1.5px] bg-white transition-transform duration-300 origin-center"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Fullscreen Modal Menu -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-50 bg-neutral-950 flex flex-col justify-between p-6 transition-all duration-300 ease-in-out -translate-y-full opacity-0 pointer-events-none md:hidden"
+  aria-modal="true"
+  role="dialog"
+>
+  <!-- Top Bar: Brand Logo & Close Icon -->
+  <div class="flex items-center justify-between h-14 border-b border-white/10 pb-4">
+    <a href="/" class="mobile-nav-link font-serif text-3xl font-normal tracking-normal text-white lowercase">
+      hill
+    </a>
+    <button
+      id="mobile-menu-close-btn"
+      type="button"
+      class="w-10 h-10 flex items-center justify-center text-white/80 hover:text-white focus:outline-none"
+      aria-label="Close Navigation Menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+      </svg>
     </button>
   </div>
 
-  <!-- Mobile Drawer Menu -->
-  <div
-    id="mobile-menu"
-    class="md:hidden fixed inset-0 top-[80px] bg-neutral-950/98 backdrop-blur-xl -translate-y-full opacity-0 pointer-events-none transition-all duration-300 ease-in-out px-8 py-10 flex flex-col justify-between"
-  >
-    <div class="flex flex-col space-y-6 text-base font-light text-neutral-200">
-      <a href="#practices" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10">What We Do</a>
-      <a href="#about" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10">About</a>
-      <a href="#people" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10">People</a>
-      <a href="#case-studies" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10">Case Studies</a>
-      <a href="#insights" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10">Insights</a>
-    </div>
+  <!-- Center Links -->
+  <nav class="flex flex-col space-y-6 my-auto py-8 text-xl font-serif text-neutral-200">
+    <a href="#practices" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10 flex items-center justify-between">
+      <span>What We Do</span>
+      <span class="text-sm font-sans text-neutral-500">&#8599;</span>
+    </a>
+    <a href="#about" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10 flex items-center justify-between">
+      <span>About</span>
+      <span class="text-sm font-sans text-neutral-500">&#8599;</span>
+    </a>
+    <a href="#people" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10 flex items-center justify-between">
+      <span>People</span>
+      <span class="text-sm font-sans text-neutral-500">&#8599;</span>
+    </a>
+    <a href="#case-studies" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10 flex items-center justify-between">
+      <span>Case Studies</span>
+      <span class="text-sm font-sans text-neutral-500">&#8599;</span>
+    </a>
+    <a href="#insights" class="mobile-nav-link hover:text-white transition-colors py-2 border-b border-white/10 flex items-center justify-between">
+      <span>Insights</span>
+      <span class="text-sm font-sans text-neutral-500">&#8599;</span>
+    </a>
+  </nav>
 
-    <div class="pt-8">
-      <a
-        href="#contact"
-        class="mobile-nav-link block text-center bg-white text-black text-xs font-medium py-3.5 px-6 w-full rounded-none"
-      >
-        Contact
-      </a>
-    </div>
+  <!-- Bottom CTA -->
+  <div class="pt-4 border-t border-white/10">
+    <a
+      href="#contact"
+      class="mobile-nav-link block text-center bg-white text-black text-xs font-normal py-3.5 px-6 w-full rounded-none tracking-wide hover:bg-neutral-100 transition-colors"
+    >
+      Contact
+    </a>
   </div>
-</header>
+</div>
 
 <script>
   const header = document.getElementById('site-header');
   const menuBtn = document.getElementById('mobile-menu-btn');
+  const closeBtn = document.getElementById('mobile-menu-close-btn');
   const menu = document.getElementById('mobile-menu');
-  const bar1 = document.getElementById('bar-1');
-  const bar2 = document.getElementById('bar-2');
-  const bar3 = document.getElementById('bar-3');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
   let isOpen = false;
 
-  function toggleMenu() {
-    isOpen = !isOpen;
+  function toggleMenu(open) {
+    isOpen = typeof open === 'boolean' ? open : !isOpen;
     if (isOpen) {
       menu?.classList.remove('-translate-y-full', 'opacity-0', 'pointer-events-none');
-      bar1?.classList.add('rotate-45', 'translate-y-2');
-      bar2?.classList.add('opacity-0');
-      bar3?.classList.add('-rotate-45', '-translate-y-2');
+      document.body.style.overflow = 'hidden';
     } else {
       menu?.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
-      bar1?.classList.remove('rotate-45', 'translate-y-2');
-      bar2?.classList.remove('opacity-0');
-      bar3?.classList.remove('-rotate-45', '-translate-y-2');
+      document.body.style.overflow = '';
     }
   }
 
-  menuBtn?.addEventListener('click', toggleMenu);
+  menuBtn?.addEventListener('click', () => toggleMenu(true));
+  closeBtn?.addEventListener('click', () => toggleMenu(false));
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
-      if (isOpen) toggleMenu();
+      toggleMenu(false);
     });
   });
 

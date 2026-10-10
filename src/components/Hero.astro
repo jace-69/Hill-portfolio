@@ -3,18 +3,18 @@
 ---
 
 <section class="relative w-full h-[860px] max-h-screen min-h-[700px] flex flex-col justify-between overflow-hidden bg-[#181917] text-white">
-  <!-- Hero Background Image & Gradient Scrims -->
+  <!-- Hero Background Image & Gradient Overlays -->
   <div class="absolute inset-0 z-0">
     <img
       src="/images/Portrait.webp"
       alt="Hill executive counsel at desk in corner office"
-      class="w-full h-full object-cover object-center"
+      class="w-full h-full object-cover object-[70%_center] sm:object-center"
       loading="eager"
       fetchpriority="high"
     />
-    <!-- Exact lighting scrim matching original design -->
-    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+    <!-- Exact dark gradient overlays between image and text -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20 z-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent z-0"></div>
   </div>
 
   <!-- Top spacer for fixed navbar -->
@@ -40,7 +40,7 @@
       class="w-11 h-11 border border-white/30 flex items-center justify-center text-white hover:border-white hover:bg-white/10 transition-colors rounded-none shrink-0"
       aria-label="Discover our firm"
     >
-      <span class="text-base font-light">→</span>
+      <span class="text-base font-light">&#8594;</span>
     </a>
   </div>
 </section>
